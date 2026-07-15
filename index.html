@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>徐玥 / Riley</title>
+    <meta
+      name="description"
+      content="徐玥 / Riley Xu 的个人网站，整理工作项目、Vibe Coding 作品和实验笔记。"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="site-shell">
+      <nav class="site-nav" aria-label="Primary navigation">
+        <div class="nav-links">
+          <a href="#selected-work">Selected Work</a>
+          <a href="#vibe-projects">Vibe Coding Project</a>
+          <a href="#notes">Experiments &amp; Notes</a>
+        </div>
+      </nav>
+
+      <header class="hero" id="top">
+        <div class="portrait-wrap" aria-label="徐玥在海边的生活照片">
+          <div class="portrait-backdrop" aria-hidden="true"></div>
+          <div class="portrait-photo">
+            <img src="./riley-xu-portrait.jpg" alt="徐玥在海边的生活照片" />
+          </div>
+        </div>
+
+        <div class="hero-copy">
+          <p class="eyebrow">Personal Archive</p>
+          <h1>徐玥 / Riley</h1>
+          <p class="intro">
+            在组织、数据和 AI 之间探索，也做一些好玩的小工具。
+          </p>
+          <p class="subcopy">
+            People, Data, AI, and small tools for clearer work.
+          </p>
+        </div>
+      </header>
+
+      <div class="project-groups" aria-label="Project archive">
+        <section class="project-group" id="selected-work">
+          <header class="group-header">
+            <p class="group-number">01</p>
+            <h3>Selected Work</h3>
+          </header>
+          <div class="project-list">
+            <article class="project-card project-card--diagnosis">
+              <div class="project-card__cover" aria-hidden="true">
+                <div class="org-chart-mini">
+                  <span></span><span></span><span></span><span></span>
+                </div>
+                <div class="signal-ring"></div>
+              </div>
+              <div class="project-card__body">
+                <p class="project-card__meta">Organization / AI</p>
+                <h4>组织诊断</h4>
+              </div>
+            </article>
+
+            <article class="project-card project-card--dashboard">
+              <div class="project-card__cover" aria-hidden="true">
+                <div class="dashboard-window">
+                  <span class="dashboard-line"></span>
+                  <div class="dashboard-bars"><i></i><i></i><i></i><i></i></div>
+                </div>
+              </div>
+              <div class="project-card__body">
+                <p class="project-card__meta">Data / Insight</p>
+                <h4>数据看板</h4>
+              </div>
+            </article>
+
+            <article class="project-card project-card--rank">
+              <div class="project-card__cover" aria-hidden="true">
+                <div class="rank-steps"><i></i><i></i><i></i><i></i><i></i></div>
+                <span class="rank-dot"></span>
+              </div>
+              <div class="project-card__body">
+                <p class="project-card__meta">Organization Design</p>
+                <h4>职级变革</h4>
+              </div>
+            </article>
+
+          </div>
+        </section>
+
+        <section class="project-group" id="vibe-projects">
+          <header class="group-header">
+            <p class="group-number">02</p>
+            <h3>Vibe Coding Project</h3>
+          </header>
+          <div class="project-list">
+            <a
+              class="project-card project-card--book"
+              href="https://github.com/rileyxuyue/answerbook"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="打开答案之书 GitHub 仓库"
+            >
+              <div class="project-card__cover" aria-hidden="true">
+                <div class="answer-book">
+                  <span>?</span>
+                  <i></i><i></i><i></i>
+                </div>
+              </div>
+              <div class="project-card__body">
+                <p class="project-card__meta">Small Tool</p>
+                <h4>答案之书</h4>
+              </div>
+            </a>
+
+            <article class="project-card project-card--lamp">
+              <div class="project-card__cover" aria-hidden="true">
+                <div class="lamp-glow"></div>
+                <div class="lamp-shape"><span></span></div>
+                <div class="lamp-ticks"><i></i><i></i><i></i><i></i></div>
+              </div>
+              <div class="project-card__body">
+                <p class="project-card__meta">Habit / Ritual</p>
+                <h4>大排灯打卡</h4>
+              </div>
+            </article>
+
+            <article class="project-card project-card--scan">
+              <div class="project-card__cover" aria-hidden="true">
+                <div class="scan-window">
+                  <div class="scan-building"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+                  <span></span>
+                </div>
+              </div>
+              <div class="project-card__body">
+                <p class="project-card__meta">AI / Skill</p>
+                <h4>公司扫描 Skill</h4>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="project-group" id="notes">
+          <header class="group-header">
+            <p class="group-number">03</p>
+            <h3>Experiments &amp; Notes</h3>
+          </header>
+          <div class="project-list">
+            <article class="project-card project-card--italy">
+              <div class="project-card__cover" aria-hidden="true">
+                <div class="route-map">
+                  <span class="route-line"></span>
+                  <i></i><i></i><i></i>
+                </div>
+                <div class="map-label">ITALIA</div>
+              </div>
+              <div class="project-card__body">
+                <p class="project-card__meta">Travel / Notes</p>
+                <h4>意大利行程</h4>
+              </div>
+            </article>
+
+            <article class="project-card project-card--novel">
+              <div class="project-card__cover" aria-hidden="true">
+                <div class="novel-pages"><i></i><i></i><i></i><i></i></div>
+                <div class="novel-quote">“</div>
+                <span class="novel-progress"></span>
+              </div>
+              <div class="project-card__body">
+                <p class="project-card__meta">Writing / Ongoing</p>
+                <h4>出租大脑小说</h4>
+              </div>
+            </article>
+          </div>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>
