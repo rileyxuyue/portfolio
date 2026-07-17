@@ -245,9 +245,7 @@ a {
 }
 
 .project-card--book {
-  background:
-    radial-gradient(circle at 68% 6%, rgba(255, 248, 243, 0.9), transparent 24%),
-    radial-gradient(circle at 50% 0%, #f4cfc7 0%, #e5a1f5 38%, #f4f8f9 78%);
+  background: #efb7c8;
 }
 
 .project-card--lamp {
@@ -270,6 +268,10 @@ a {
   position: absolute;
   inset: 0 0 78px;
   overflow: hidden;
+}
+
+.project-card--book .project-card__cover {
+  inset: 0;
 }
 
 .project-card__primary {
@@ -485,36 +487,14 @@ a {
   box-shadow: 0 8px 16px rgba(181, 103, 194, 0.28);
 }
 
-.answerbook-material {
+.answerbook-illustration {
   position: absolute;
-  top: 20px;
-  left: 50%;
-  width: 144px;
-  height: 212px;
-  transform: translateX(-50%) rotate(-4deg);
-}
-
-.answerbook-material::after {
-  position: absolute;
-  right: 7px;
-  bottom: -5px;
-  left: 7px;
-  height: 18px;
-  border-radius: 50%;
-  background: rgba(92, 20, 64, 0.2);
-  content: "";
-  filter: blur(10px);
-  transform: rotate(4deg);
-}
-
-.answerbook-material img {
-  position: relative;
-  z-index: 1;
+  inset: 0;
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: contain;
-  filter: drop-shadow(0 12px 15px rgba(92, 20, 64, 0.22));
+  object-fit: cover;
+  object-position: 50% 38%;
 }
 
 .lamp-glow {
@@ -785,11 +765,6 @@ a {
     min-height: 300px;
   }
 
-  .answerbook-material {
-    top: 16px;
-    width: 134px;
-    height: 196px;
-  }
 }
 
 @media (max-width: 680px) {
@@ -865,8 +840,4 @@ a {
     min-height: 280px;
   }
 
-  .answerbook-material {
-    width: 124px;
-    height: 180px;
-  }
 }
