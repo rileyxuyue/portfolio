@@ -63,6 +63,8 @@ a {
 }
 
 .hero {
+  position: relative;
+  isolation: isolate;
   display: grid;
   grid-template-columns: 260px minmax(0, 1fr);
   align-items: center;
@@ -71,8 +73,114 @@ a {
   margin-bottom: 96px;
 }
 
+.hero-ribbons {
+  position: absolute;
+  inset: -34px -36px -28px -52px;
+  z-index: 0;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.hero-ribbon {
+  position: absolute;
+  border-radius: 50%;
+  background: conic-gradient(
+    from 214deg,
+    rgba(255, 255, 255, 0) 0deg,
+    rgba(169, 221, 244, 0.76) 44deg,
+    rgba(229, 161, 245, 0.72) 116deg,
+    rgba(255, 255, 255, 0) 174deg,
+    rgba(248, 216, 122, 0.78) 230deg,
+    rgba(242, 132, 163, 0.68) 302deg,
+    rgba(255, 255, 255, 0) 360deg
+  );
+  filter: drop-shadow(0 0 8px rgba(229, 161, 245, 0.16));
+  opacity: 0.7;
+  padding: 2px;
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  mask-composite: exclude;
+}
+
+.hero-ribbon--wide {
+  top: 40px;
+  right: 4px;
+  bottom: 28px;
+  left: 4px;
+  transform: rotate(-7deg);
+}
+
+.hero-ribbon--tilted {
+  top: 58px;
+  right: 54px;
+  bottom: 4px;
+  left: 54px;
+  background: conic-gradient(
+    from 78deg,
+    rgba(255, 255, 255, 0) 0deg,
+    rgba(242, 132, 163, 0.7) 56deg,
+    rgba(248, 216, 122, 0.66) 132deg,
+    rgba(255, 255, 255, 0) 198deg,
+    rgba(169, 221, 244, 0.72) 266deg,
+    rgba(229, 161, 245, 0.62) 326deg,
+    rgba(255, 255, 255, 0) 360deg
+  );
+  opacity: 0.52;
+  padding: 1.5px;
+  transform: rotate(8deg);
+}
+
+.hero-ribbon--portrait {
+  top: 34px;
+  bottom: 26px;
+  left: -8px;
+  width: 346px;
+  background: conic-gradient(
+    from 162deg,
+    rgba(255, 255, 255, 0) 0deg,
+    rgba(248, 216, 122, 0.82) 68deg,
+    rgba(242, 132, 163, 0.62) 144deg,
+    rgba(255, 255, 255, 0) 204deg,
+    rgba(229, 161, 245, 0.74) 270deg,
+    rgba(169, 221, 244, 0.74) 330deg,
+    rgba(255, 255, 255, 0) 360deg
+  );
+  opacity: 0.76;
+  padding: 2.5px;
+  transform: rotate(14deg);
+}
+
+.hero-ribbon-glint {
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  border: 2px solid rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  box-shadow: 0 0 0 1px rgba(15, 23, 42, 0.06), 0 0 16px currentColor;
+}
+
+.hero-ribbon-glint--gold {
+  top: 64px;
+  right: 22%;
+  color: rgba(248, 216, 122, 0.82);
+  background: #f8d87a;
+}
+
+.hero-ribbon-glint--blue {
+  right: 4%;
+  bottom: 92px;
+  color: rgba(169, 221, 244, 0.88);
+  background: #a9ddf4;
+}
+
 .portrait-wrap {
   position: relative;
+  z-index: 2;
   display: grid;
   place-items: center;
   width: 260px;
@@ -136,6 +244,8 @@ a {
 }
 
 .hero-copy {
+  position: relative;
+  z-index: 2;
   max-width: 650px;
 }
 
@@ -693,6 +803,14 @@ a {
     height: 184px;
   }
 
+  .hero-ribbons {
+    inset: -28px -22px -24px -34px;
+  }
+
+  .hero-ribbon--portrait {
+    width: 296px;
+  }
+
   .hero h1 {
     font-size: 2.75rem;
   }
@@ -738,6 +856,45 @@ a {
     gap: 34px;
     min-height: 0;
     margin-bottom: 70px;
+  }
+
+  .hero-ribbons {
+    inset: -20px 0 -26px;
+  }
+
+  .hero-ribbon--wide {
+    top: 8px;
+    right: -8px;
+    bottom: 8px;
+    left: 0;
+    transform: rotate(-4deg);
+  }
+
+  .hero-ribbon--tilted {
+    top: 30px;
+    right: 10px;
+    bottom: 24px;
+    left: -8px;
+    transform: rotate(5deg);
+  }
+
+  .hero-ribbon--portrait {
+    top: 0;
+    bottom: auto;
+    left: -14px;
+    width: min(292px, 92vw);
+    height: 286px;
+    transform: rotate(12deg);
+  }
+
+  .hero-ribbon-glint--gold {
+    top: 18px;
+    right: 11%;
+  }
+
+  .hero-ribbon-glint--blue {
+    right: 1%;
+    bottom: 94px;
   }
 
   .portrait-wrap {
