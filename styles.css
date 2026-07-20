@@ -14,13 +14,11 @@
 
 html {
   scroll-behavior: smooth;
-  overflow-x: hidden;
 }
 
 body {
   min-height: 100vh;
   padding: 34px 20px 76px;
-  overflow-x: hidden;
   background:
     linear-gradient(180deg, rgba(248, 250, 252, 0.92), #ffffff 36%),
     #ffffff;
@@ -296,188 +294,6 @@ a {
 
 .project-groups {
   border-bottom: 1px solid #dfe7eb;
-}
-
-.silk-footer {
-  position: relative;
-  isolation: isolate;
-  width: calc(100% + 40px);
-  height: 360px;
-  margin: 92px -20px -76px;
-  overflow: hidden;
-  background: #12141a;
-  color: rgba(255, 255, 255, 0.72);
-}
-
-.silk-footer::before {
-  position: absolute;
-  inset: 0 0 auto;
-  z-index: 4;
-  height: 92px;
-  background: linear-gradient(180deg, #ffffff 0%, rgba(255, 255, 255, 0.72) 20%, transparent 100%);
-  content: "";
-  pointer-events: none;
-}
-
-.silk-field {
-  position: absolute;
-  inset: 0;
-  overflow: hidden;
-  background:
-    linear-gradient(140deg, rgba(181, 103, 194, 0.09), transparent 38%),
-    linear-gradient(320deg, rgba(169, 221, 244, 0.08), transparent 46%),
-    #12141a;
-}
-
-.silk-field::after {
-  position: absolute;
-  inset: 64px -8% 28px;
-  z-index: 3;
-  border-radius: 50%;
-  background: repeating-linear-gradient(
-    101deg,
-    transparent 0 24px,
-    rgba(255, 255, 255, 0.035) 25px,
-    rgba(169, 221, 244, 0.07) 26px,
-    transparent 28px 52px
-  );
-  content: "";
-  opacity: 0.34;
-  pointer-events: none;
-  transform: rotate(-4deg) skewX(8deg);
-  -webkit-mask-image: linear-gradient(180deg, transparent, #000 20%, #000 78%, transparent);
-  mask-image: linear-gradient(180deg, transparent, #000 20%, #000 78%, transparent);
-}
-
-.silk-fold {
-  position: absolute;
-  left: -18%;
-  width: 136%;
-  border-radius: 50%;
-  mix-blend-mode: screen;
-  pointer-events: none;
-  will-change: transform;
-}
-
-.silk-fold--back {
-  top: 76px;
-  height: 188px;
-  background: linear-gradient(
-    96deg,
-    transparent 4%,
-    rgba(169, 221, 244, 0.08) 16%,
-    rgba(169, 221, 244, 0.68) 29%,
-    rgba(229, 161, 245, 0.56) 44%,
-    rgba(255, 255, 255, 0.16) 55%,
-    rgba(242, 132, 163, 0.56) 70%,
-    rgba(248, 216, 122, 0.16) 84%,
-    transparent 96%
-  );
-  filter: blur(18px) saturate(1.18);
-  opacity: 0.68;
-  transform: translate3d(-3%, 20px, 0) rotate(-7deg) skewX(-10deg);
-  animation: silk-drift-back 18s ease-in-out infinite alternate;
-}
-
-.silk-fold--middle {
-  top: 102px;
-  height: 128px;
-  background: linear-gradient(
-    104deg,
-    transparent 7%,
-    rgba(242, 132, 163, 0.18) 18%,
-    rgba(255, 255, 255, 0.74) 31%,
-    rgba(229, 161, 245, 0.74) 42%,
-    rgba(169, 221, 244, 0.38) 57%,
-    rgba(248, 216, 122, 0.62) 72%,
-    rgba(242, 132, 163, 0.2) 86%,
-    transparent 97%
-  );
-  filter: blur(10px) saturate(1.14);
-  opacity: 0.78;
-  transform: translate3d(2%, 24px, 0) rotate(5deg) skewX(12deg) scaleY(0.88);
-  animation: silk-drift-middle 14s ease-in-out infinite alternate;
-}
-
-.silk-fold--front {
-  right: -14%;
-  bottom: -70px;
-  left: auto;
-  width: 128%;
-  height: 226px;
-  background: linear-gradient(
-    88deg,
-    transparent 2%,
-    rgba(181, 103, 194, 0.28) 17%,
-    rgba(242, 132, 163, 0.76) 32%,
-    rgba(248, 216, 122, 0.72) 45%,
-    rgba(255, 255, 255, 0.78) 56%,
-    rgba(169, 221, 244, 0.6) 70%,
-    rgba(229, 161, 245, 0.42) 84%,
-    transparent 98%
-  );
-  filter: blur(14px) saturate(1.2);
-  opacity: 0.74;
-  transform: translate3d(1%, 6px, 0) rotate(-4deg) skewX(-8deg);
-  animation: silk-drift-front 20s ease-in-out infinite alternate;
-}
-
-.silk-fold--sheen {
-  top: 124px;
-  left: -8%;
-  width: 116%;
-  height: 54px;
-  background: linear-gradient(
-    90deg,
-    transparent 5%,
-    rgba(255, 255, 255, 0.04) 18%,
-    rgba(255, 255, 255, 0.88) 40%,
-    rgba(248, 216, 122, 0.44) 53%,
-    rgba(229, 161, 245, 0.62) 67%,
-    rgba(169, 221, 244, 0.12) 82%,
-    transparent 96%
-  );
-  filter: blur(7px);
-  opacity: 0.64;
-  transform: rotate(-2deg) skewX(14deg);
-  animation: silk-drift-sheen 12s ease-in-out infinite alternate;
-}
-
-.silk-footer__meta {
-  position: absolute;
-  right: max(20px, calc((100vw - 1100px) / 2));
-  bottom: 28px;
-  left: max(20px, calc((100vw - 1100px) / 2));
-  z-index: 5;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  font-size: 0.7rem;
-  font-weight: 500;
-}
-
-@keyframes silk-drift-back {
-  to {
-    transform: translate3d(5%, -8px, 0) rotate(1deg) skewX(8deg) scaleY(1.08);
-  }
-}
-
-@keyframes silk-drift-middle {
-  to {
-    transform: translate3d(-4%, -12px, 0) rotate(-4deg) skewX(-8deg) scaleY(1.12);
-  }
-}
-
-@keyframes silk-drift-front {
-  to {
-    transform: translate3d(-5%, -22px, 0) rotate(3deg) skewX(9deg) scaleY(0.9);
-  }
-}
-
-@keyframes silk-drift-sheen {
-  to {
-    transform: translate3d(8%, 18px, 0) rotate(4deg) skewX(-10deg) scaleY(1.28);
-  }
 }
 
 .project-group {
@@ -1098,11 +914,6 @@ a {
   .project-card {
     transition: none;
   }
-
-  .silk-fold {
-    animation: none;
-  }
-
 }
 
 @media (max-width: 900px) {
@@ -1169,36 +980,6 @@ a {
 @media (max-width: 680px) {
   body {
     padding: 22px 16px 56px;
-  }
-
-  .silk-footer {
-    height: 300px;
-    width: calc(100% + 32px);
-    margin: 70px -16px -56px;
-  }
-
-  .silk-footer::before {
-    height: 74px;
-  }
-
-  .silk-fold--back {
-    top: 72px;
-    height: 150px;
-  }
-
-  .silk-fold--middle {
-    top: 106px;
-    height: 104px;
-  }
-
-  .silk-fold--front {
-    bottom: -56px;
-    height: 178px;
-  }
-
-  .silk-fold--sheen {
-    top: 132px;
-    height: 44px;
   }
 
   .site-nav {
