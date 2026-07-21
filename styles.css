@@ -774,6 +774,71 @@ a {
   background: linear-gradient(90deg, #8b72bb 0 42%, rgba(139, 114, 187, 0.18) 42% 100%);
 }
 
+.flower-fall {
+  position: fixed;
+  inset: 0;
+  z-index: 8;
+  overflow: hidden;
+  pointer-events: none;
+  contain: strict;
+}
+
+.falling-flower {
+  position: absolute;
+  top: -12vh;
+  left: var(--flower-x);
+  display: block;
+  color: #f284a3;
+  font-size: var(--flower-size);
+  line-height: 1;
+  opacity: 0;
+  filter: blur(var(--flower-blur)) drop-shadow(0 5px 9px rgba(181, 103, 194, 0.12));
+  animation: flower-fall var(--flower-duration) linear var(--flower-delay) infinite;
+  will-change: transform, opacity;
+}
+
+.falling-flower__bloom {
+  display: block;
+  background: linear-gradient(145deg, #f8aca0 8%, #f284a3 44%, #dca2eb 84%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  font-family: Georgia, "Times New Roman", serif;
+  font-style: normal;
+  transform-origin: 50% 45%;
+  animation: flower-sway var(--flower-sway) ease-in-out infinite alternate;
+}
+
+@keyframes flower-fall {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, -12vh, 0);
+  }
+
+  8% {
+    opacity: var(--flower-opacity);
+  }
+
+  88% {
+    opacity: var(--flower-opacity);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate3d(var(--flower-drift), 116vh, 0);
+  }
+}
+
+@keyframes flower-sway {
+  from {
+    transform: translateX(-5px) rotate(-18deg);
+  }
+
+  to {
+    transform: translateX(5px) rotate(24deg);
+  }
+}
+
 @media (hover: hover) and (pointer: fine) {
   .portrait-photo,
   .project-card {
@@ -914,6 +979,10 @@ a {
   .project-card {
     transition: none;
   }
+
+  .flower-fall {
+    display: none;
+  }
 }
 
 @media (max-width: 900px) {
@@ -980,6 +1049,14 @@ a {
 @media (max-width: 680px) {
   body {
     padding: 22px 16px 56px;
+  }
+
+  .flower-fall {
+    opacity: 0.72;
+  }
+
+  .falling-flower:nth-child(n + 8) {
+    display: none;
   }
 
   .site-nav {
