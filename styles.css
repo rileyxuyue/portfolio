@@ -774,47 +774,24 @@ a {
   background: linear-gradient(90deg, #8b72bb 0 42%, rgba(139, 114, 187, 0.18) 42% 100%);
 }
 
+.water-surface {
+  position: fixed;
+  inset: 0;
+  z-index: 7;
+  display: block;
+  width: 100%;
+  height: 100%;
+  opacity: 0.92;
+  pointer-events: none;
+}
+
 @media (hover: hover) and (pointer: fine) {
   .portrait-photo,
   .project-card {
-    --ripple-x: 50%;
-    --ripple-y: 50%;
     transition:
       transform 260ms cubic-bezier(0.22, 1, 0.36, 1),
       box-shadow 260ms ease;
     will-change: transform;
-  }
-
-  .portrait-photo::after,
-  .project-card::after {
-    position: absolute;
-    inset: 0;
-    z-index: 5;
-    background:
-      radial-gradient(
-        ellipse 76px 48px at var(--ripple-x) var(--ripple-y),
-        rgba(255, 255, 255, 0.3) 0%,
-        rgba(255, 255, 255, 0.12) 24%,
-        transparent 58%
-      ),
-      radial-gradient(
-        ellipse 58px 36px at var(--ripple-x) var(--ripple-y),
-        transparent 45%,
-        rgba(169, 221, 244, 0.2) 49%,
-        rgba(255, 255, 255, 0.3) 52%,
-        transparent 58%
-      ),
-      radial-gradient(
-        ellipse 102px 64px at var(--ripple-x) var(--ripple-y),
-        transparent 62%,
-        rgba(229, 161, 245, 0.12) 66%,
-        transparent 72%
-      );
-    content: "";
-    filter: blur(0.45px);
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 220ms ease;
   }
 
   .portrait-photo:is(:hover, .is-pointer-over) {
@@ -829,11 +806,6 @@ a {
     box-shadow:
       0 24px 44px -26px rgba(15, 23, 42, 0.3),
       0 0 28px rgba(169, 221, 244, 0.12);
-  }
-
-  .portrait-photo:is(:hover, .is-pointer-over)::after,
-  .project-card:is(:hover, .is-pointer-over)::after {
-    opacity: 1;
   }
 
   .project-card.is-wave-clicked {
@@ -892,124 +864,6 @@ a {
     border-color: rgba(242, 132, 163, 0.46);
   }
 
-  .water-ripple {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 998;
-    width: 34px;
-    height: 19px;
-    border-radius: 50%;
-    background:
-      radial-gradient(ellipse at center, transparent 46%, rgba(255, 255, 255, 0.5) 50%, transparent 55%),
-      radial-gradient(ellipse at center, transparent 62%, rgba(169, 221, 244, 0.25) 66%, transparent 72%);
-    box-shadow: inset 0 0 6px rgba(229, 161, 245, 0.08);
-    opacity: 0;
-    pointer-events: none;
-    transform: translate(-50%, -50%) scale(0.25);
-    animation: water-ripple 980ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
-    will-change: transform, opacity;
-  }
-
-  .water-ripple.is-over-surface {
-    background:
-      radial-gradient(ellipse at center, transparent 44%, rgba(255, 255, 255, 0.58) 49%, transparent 55%),
-      radial-gradient(ellipse at center, transparent 61%, rgba(242, 132, 163, 0.22) 66%, transparent 73%);
-  }
-
-  .module-wave {
-    position: fixed;
-    z-index: 7;
-    pointer-events: none;
-    transform: translate(-50%, -50%);
-  }
-
-  .module-wave i {
-    position: absolute;
-    inset: 0;
-    border: 1px solid rgba(169, 221, 244, 0.46);
-    border-radius: inherit;
-    box-shadow:
-      0 0 0 0.5px rgba(255, 255, 255, 0.4),
-      0 0 14px rgba(169, 221, 244, 0.15),
-      inset 0 0 9px rgba(229, 161, 245, 0.1);
-    filter: blur(0.25px);
-    opacity: 0;
-    transform: scale(0.98);
-    animation: module-wave 1500ms cubic-bezier(0.2, 0.45, 0.3, 1) forwards;
-  }
-
-  .module-wave i:nth-child(2) {
-    border-color: rgba(229, 161, 245, 0.38);
-    animation-delay: 140ms;
-  }
-
-  .module-wave i:nth-child(3) {
-    border-color: rgba(248, 216, 122, 0.3);
-    animation-delay: 280ms;
-  }
-
-  .pointer-burst {
-    position: fixed;
-    z-index: 999;
-    width: 38px;
-    height: 22px;
-    border: 0;
-    border-radius: 50%;
-    background:
-      radial-gradient(ellipse at center, transparent 48%, rgba(255, 255, 255, 0.62) 52%, transparent 57%),
-      radial-gradient(ellipse at center, transparent 66%, rgba(181, 103, 194, 0.3) 70%, transparent 76%);
-    opacity: 0;
-    pointer-events: none;
-    transform: translate(-50%, -50%) scale(0.22);
-    animation: pointer-burst 760ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
-  }
-
-  @keyframes water-ripple {
-    0% {
-      opacity: 0.48;
-      transform: translate(-50%, -50%) scale(0.25);
-    }
-
-    55% {
-      opacity: 0.22;
-    }
-
-    100% {
-      opacity: 0;
-      transform: translate(-50%, -50%) scale(2.7);
-    }
-  }
-
-  @keyframes module-wave {
-    0% {
-      opacity: 0.56;
-      transform: scale(0.98);
-    }
-
-    45% {
-      opacity: 0.24;
-      transform: scale(1.1);
-    }
-
-    100% {
-      opacity: 0;
-      transform: scale(1.2);
-    }
-  }
-
-  @keyframes pointer-burst {
-    0% {
-      opacity: 0.54;
-      transform: translate(-50%, -50%) scale(0.22);
-    }
-
-    100% {
-      opacity: 0;
-      transform: translate(-50%, -50%) scale(3.2);
-    }
-  }
-
   @keyframes card-water-lift {
     0%,
     100% {
@@ -1041,6 +895,10 @@ a {
   .portrait-photo,
   .project-card {
     transition: none;
+  }
+
+  .water-surface {
+    display: none;
   }
 }
 
